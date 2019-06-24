@@ -1,0 +1,32 @@
+{
+  "name": "yeetbot",
+  "version": "1.0.0",
+  "description": "\"# yeet-bot\"",
+  "main": "bot.js",
+  "dependencies": {
+    "bufferutil": "^4.0.1",
+    "discord.io": "^2.5.3",
+    "discord.js": "^11.5.1",
+    "jquery": "^3.4.1",
+    "mc-ping-updated": "^0.1.0",
+    "request": "^2.88.0",
+    "require": "^2.4.20",
+    "winston": "^3.2.1",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JGehl99/yeet-bot.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/JGehl99/yeet-bot/issues"
+  },
+  "homepage": "https://github.com/JGehl99/yeet-bot#readme"
+}
