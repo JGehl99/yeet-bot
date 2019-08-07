@@ -1,10 +1,10 @@
+/* eslint-disable */
+
 /*TODO
 
 	- Find a fix for the data.debug.dns.a[0].host error
-	- Use Embeds to make everything look nicer
-	- Redo the players online loop to only show a max of 10 usernames
-	- Create a new command.js file specifically for YEETcraft, set this one to only arguments
 	- Add expected command usage
+	
 	
 */
 
@@ -75,12 +75,18 @@ module.exports = {
 				else{
 					status="Offline!";
 				}
+                var players = "[OFFLINE]";
+			    var online = 0;
+                var motd = "[OFFLINE]";
 				
-				var online = data.players.online;
+				var version = "Unavailable";
 				
-				if (online!=null){
-					var players = "";
-					
+				
+				if (data.online==true){
+					players = "";
+			        online = data.players.online;
+                    motd = data.motd.clean;
+					version = data.version;
 					if (data.players.list!=null){
 					
 						for (var x = 0;x<6;x++){
@@ -100,9 +106,7 @@ module.exports = {
 					var players = "No one is playing!";	
 				}
 				
-				var motd = data.motd.clean;
 				
-				var version = data.version;
 				
 				const exampleEmbed = new Discord.RichEmbed()
 					.setColor('#0099ff')

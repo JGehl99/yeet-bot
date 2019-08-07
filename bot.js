@@ -14,12 +14,14 @@
 
 //Requires
 const Discord = require('discord.js');
-	//Creates Client
-	const client = new Discord.Client();
+//Creates Client
+const client = new Discord.Client();
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var request = require('request');
 const config = require("./config.json");
 const fs = require('fs');
+const { prefix } = require('./config.json');
+
 
 //Creates collection
 client.commands = new Discord.Collection();
@@ -54,6 +56,17 @@ client.on('message', message => {
 	//TODO: Add wrong command message
 	if (!client.commands.has(commandName)) return;
 	const command = client.commands.get(commandName);
+
+	if (command.args && !args.length) {
+		let reply = ``;
+
+		if (command.usage) {
+			reply += `\`${prefix}${command.name} ${command.usage}\``;
+		}
+
+		return message.channel.send(reply);
+	}
+		
 
 	// Try to execute command
 	try {

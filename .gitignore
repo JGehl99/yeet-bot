@@ -3,3 +3,7 @@ config.json
 serverinfo.txt
 icon.png
 botBackup.js
+db
+npm-debug.log
+wp.json
+.eslintrc.js
