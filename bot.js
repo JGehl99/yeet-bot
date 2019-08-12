@@ -41,6 +41,11 @@ for (const file of commandFiles) {
 // Logs bot in
 client.login(config.token);
 
+client.on('guildMemberAdd',member=>{
+	console.log('User' + member.user.username + 'Has Joined the server!');
+	member.addRole("Members");
+});
+
 // If message is sent. trigger
 client.on('message', message => {
 	
