@@ -57,7 +57,7 @@ module.exports = {
             });
 
             //Prints links
-            console.log(links);
+            //console.log(links);
 
             //Formats the first 3 links to remove the garbage after the question mark
             for(var x = 0; x < 3; x++){
