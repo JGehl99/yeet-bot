@@ -1,21 +1,25 @@
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const Discord = require('discord.js');
+const fs = require('fs');
+
+
+
 module.exports = {
 	name: 'meme',
 	description: 'Sends a reddit meme',
-	execute(message, args, config) {
-		//Creates XMLHTTPRequest 
-		var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-		var request = new XMLHttpRequest();
-		const Discord = require('discord.js');
-		const fs = require('fs');
+	execute(message, args, config) { 
 
-		console.log(args);
-		var subreddit = ""
+		var request = new XMLHttpRequest();
+		var subreddit = "";
+		
+		//Checks if there is an argument (specific subreddit)
+		// If true, add slash beforehand so it can be concatenated onto the link below
 		if (args[0]!=null){
 			subreddit = "/" + args[0];
 		}
 
 
-		// Requests the JSON file form this site using address from config
+		// Requests the JSON file form this site using link to an api and (optiona) subreddit
 		request.open('GET', 'https://meme-api.herokuapp.com/gimme' + subreddit, true);
 
 		request.onload = function() {
@@ -25,8 +29,10 @@ module.exports = {
 				// Stores the file 
 				var data = JSON.parse(request.responseText);
 				
+				//Prints data
 				console.log(data);
 				
+				//Creats richEmbed message out of data
 				const msg = new Discord.RichEmbed()
 					.setColor('#34007d')
 					.setTitle(data.title)
@@ -34,7 +40,7 @@ module.exports = {
 					.setDescription(data.subreddit)
 					.setImage(data.url)
 					
-					
+					//Sends Message
 					message.channel.send(msg);
                 
             } else {

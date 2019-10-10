@@ -28,6 +28,7 @@ module.exports = {
         //Prints formatted JSON object
         console.log("\n\n"+JSON.stringify(data,null,2)+"\n\n");
         
+        //Shifts all items over to remove waypoint
         for (i = 0 ; i <(data.name.length) ; i++){
             console.log("---");
             if ((i+1) == key){
@@ -44,8 +45,10 @@ module.exports = {
             
         }
 
+        //Prints new list
         console.log("\n\n"+JSON.stringify(data,null,2)+"\n\n");
 
+        //Writes new list over old one
         fs.writeFileSync('./wp.json',JSON.stringify(data,null,2));
 	},
 };

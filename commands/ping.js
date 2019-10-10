@@ -1,12 +1,13 @@
 /* eslint-disable */
 
 /*TODO
-
-	- Find a fix for the data.debug.dns.a[0].host error
 	- Add expected command usage
-	
-	
 */
+
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+var request = new XMLHttpRequest();
+const Discord = require('discord.js');
+const fs = require('fs');
 
 module.exports = {
 	name: 'ping',
@@ -33,12 +34,6 @@ module.exports = {
 		console.log(link);
 		console.log("\n==================================================\n");
 		
-		
-		//Creates XMLHTTPRequest 
-		var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-		var request = new XMLHttpRequest();
-		const Discord = require('discord.js');
-		const fs = require('fs');
 		// Requests the JSON file form this site using address from config
 		request.open('GET', 'https://api.mcsrvstat.us/2/'+ip+port, true);
 
