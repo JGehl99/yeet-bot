@@ -61,7 +61,7 @@ module.exports = {
 
             //Formats the first 3 links to remove the garbage after the question mark
             try{
-                for(var x = 0; x < 3; x++){
+                for(var x = 0; x < links.length; x++){
                     for (var y = 0; y < links[x].length; y++){
                         //Finds index of '?' and takes everything before it
                         if (links[x].charAt(y) == '?'){
