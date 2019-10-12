@@ -60,17 +60,22 @@ module.exports = {
             //console.log(links);
 
             //Formats the first 3 links to remove the garbage after the question mark
-            for(var x = 0; x < 3; x++){
-                for (var y = 0; y < links[x].length; y++){
-                    //Finds index of '?' and takes everything before it
-                    if (links[x].charAt(y) == '?'){
-                        links[x] = links[x].substring(0,y);
-                        break;
+            try{
+                for(var x = 0; x < 3; x++){
+                    for (var y = 0; y < links[x].length; y++){
+                        //Finds index of '?' and takes everything before it
+                        if (links[x].charAt(y) == '?'){
+                            links[x] = links[x].substring(0,y);
+                            break;
+                        }
                     }
+                    //Prints formatted links
+                    console.log(links[x]);
                 }
-                //Prints formatted links
-                console.log(links[x]);
+            } catch(e){
+                message.channel.send("Error - No Ganes Found");
             }
+            
 
             //Sends the first link to the discord channel
             message.channel.send(links[0]);
