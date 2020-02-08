@@ -60,6 +60,9 @@ client.on('message', message => {
 	// If the command doesn't exist, return null
 	//TODO: Add wrong command message
 	if (!client.commands.has(commandName)) return;
+
+	
+
 	const command = client.commands.get(commandName);
 
 	if (command.args && !args.length) {

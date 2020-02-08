@@ -80,5 +80,5 @@ module.exports = {
             //Sends the first link to the discord channel
             message.channel.send(links[0]);
         });
-	},
-};
+    }
+}

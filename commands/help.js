@@ -6,10 +6,18 @@ module.exports = {
 		
 		const { prefix } = require('../config.json');
 
-		console.log(message.client.commands);
+		const embed = new Discord.RichEmbed()
+		.setColor('#0099ff');
 
-
-
-
+		if (!args.length){
+			console.log("No Args");
+			for(const command of message.client.commands){
+				embed.addField(command.name+": ", command.usage, true);
+			}
+		} else{
+			console.log("Args")
+			
+			reply += `\`${prefix}${command.name} ${command.usage}\``;
+		}
 	},
 };
