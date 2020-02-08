@@ -16,8 +16,8 @@
 const Discord = require('discord.js');
 //Creates Client
 const client = new Discord.Client();
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-var request = require('request');
+const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const request = require('request');
 const config = require("./config.json");
 const fs = require('fs');
 const { prefix } = require('./config.json');

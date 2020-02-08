@@ -64,7 +64,7 @@ module.exports = {
                 for(var x = 0; x < links.length; x++){
                     for (var y = 0; y < links[x].length; y++){
                         //Finds index of '?' and takes everything before it
-                        if (links[x].charAt(y) == '?'){
+                        if (links[x].charAt(y) === '?'){
                             links[x] = links[x].substring(0,y);
                             break;
                         }
@@ -80,7 +80,5 @@ module.exports = {
             //Sends the first link to the discord channel
             message.channel.send(links[0]);
         });
-
-
 	},
 };
