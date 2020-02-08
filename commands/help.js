@@ -8,6 +8,7 @@ module.exports = {
 		const Discord = require('discord.js');
 
 		const embed = new Discord.RichEmbed()
+		.setTitle("Commands")
 		.setColor('#0099ff');
 
 		if (!args.length){
