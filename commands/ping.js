@@ -105,7 +105,7 @@ module.exports = {
 				
 				const exampleEmbed = new Discord.RichEmbed()
 					.setColor('#0099ff')
-					.addField('IP: ',data.debug.dns.a[0].host+port)
+					.addField('IP: ',data.ip+data.port)
 					.addField('Status:', status)
 					.addField('Version: ',version)
 					.addField('MOTD: ', motd)
